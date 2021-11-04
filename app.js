@@ -21,7 +21,7 @@ function playAnimalSound(animalType) {
         dogSound.play();
         woofCount++;
         clickCount.textContent = `Woofs: ${woofCount}`;
-    } else if (animalType ==='cat') {
+    } else if (animalType === 'cat') {
         catSound.play();
         meowCount++;
         clickCount.textContent = `Meows: ${meowCount}`;
@@ -47,14 +47,20 @@ horseCard.addEventListener('click', () => {
 
 // Keydown events
 document.addEventListener('keydown', (e) => {
-
-    if (e.key === 'd' || e.key === 'D') {
-        playAnimalSound('dog');
-
-    } else if (e.key === 'c' || e.key === 'C') {
-        playAnimalSound('cat');
-
-    } else if (e.key === 'h' || e.key === 'H') {
-        playAnimalSound('horse');
+    switch (e.key) {
+        case 'd':
+        case 'D':
+            playAnimalSound('dog');
+            break;
+        case 'c':
+        case 'C':
+            playAnimalSound('cat');
+            break;
+        case 'h':
+        case 'H':
+            playAnimalSound('horse');
+            break;
+        default:
+            break;
     }
 });
