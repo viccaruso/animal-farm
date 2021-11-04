@@ -17,9 +17,24 @@
 11) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
 
 
-## To Run Cypress Tests
-* `npm install`
-* `npm test`
-* Cypress will open -- you should then click "run <#> integration spec(s)"
-    ![](cypress.png)
-* Make sure all tests pass
+# HTML Setup
+1) 3 images
+    Why?
+    - Act as buttons to tell us when to play a sound
+    How?
+    - ```js
+    myImage.addEventListener('click', ()=> { })
+    ```
+2) Some way of playing audio (<audio src='path-to-file.wav'>)
+    Why?
+    - To play the sound on a click event
+    How?
+    - We grab audio tag from DOM (just like other HTML elements) and then do:
+    ```js
+    dogSound.play();
+    ```
+
+## Event
+On Click:
+Play appropriate sound
+Call .play method on appropriate DOM element

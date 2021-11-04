@@ -111,3 +111,10 @@ footer {
     }
 
   }
+
+
+#cat-card, #dog-card, #horse-card {
+    
+    height: 250px;
+    width: 250px;
+}
