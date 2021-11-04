@@ -15,41 +15,46 @@ let woofCount = 0;
 let meowCount = 0;
 let neighCount = 0;
 
-// click events
+// functions
+function playAnimalSound(animalType) {
+    if (animalType === 'dog') {
+        dogSound.play();
+        woofCount++;
+        clickCount.textContent = `Woofs: ${woofCount}`;
+    } else if (animalType ==='cat') {
+        catSound.play();
+        meowCount++;
+        clickCount.textContent = `Meows: ${meowCount}`;
+    } else if (animalType === 'horse') {
+        horseSound.play();
+        neighCount++;
+        clickCount.textContent = `Neighs: ${neighCount}`;
+    }
+}
+
+// Click events
 dogCard.addEventListener('click', () => {
-    dogSound.play();
-    woofCount++;
-    clickCount.textContent = `Woofs: ${woofCount}`;
+    playAnimalSound('dog');
 });
 
 catCard.addEventListener('click', () => {
-    catSound.play();
-    meowCount++;
-    clickCount.textContent = `Meows: ${meowCount}`;
+    playAnimalSound('cat');
 });
 
 horseCard.addEventListener('click', () => {
-    horseSound.play();
-    neighCount++;
-    clickCount.textContent = `Neighs: ${neighCount}`;
+    playAnimalSound('horse');
 });
 
 // Keydown events
 document.addEventListener('keydown', (e) => {
 
     if (e.key === 'd' || e.key === 'D') {
-        dogSound.play();
-        woofCount++;
-        clickCount.textContent = `Woofs: ${woofCount}`;
+        playAnimalSound('dog');
 
     } else if (e.key === 'c' || e.key === 'C') {
-        catSound.play();
-        meowCount++;
-        clickCount.textContent = `Meows: ${meowCount}`;
+        playAnimalSound('cat');
 
     } else if (e.key === 'h' || e.key === 'H') {
-        horseSound.play();
-        neighCount++;
-        clickCount.textContent = `Neighs: ${neighCount}`;
+        playAnimalSound('horse');
     }
 });
