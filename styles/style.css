@@ -47,7 +47,7 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
@@ -112,9 +112,11 @@ footer {
 
   }
 
-
 #cat-card, #dog-card, #horse-card {
-    
     height: 250px;
     width: 250px;
+}
+
+img:hover {
+    cursor: pointer;
 }
